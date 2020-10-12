@@ -1,0 +1,250 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+section
+{
+    /*relleno requerido por todos los lados del elemento*/
+    padding: 100px;
+}
+
+.banner
+{
+    position: relative;
+    /*100% del view port*/
+    min-height: 100vh;
+    /*otra forma de acceder a imagen*/
+    background: url(banner.jpg);
+    /*recora o agranda imagen para que ocupe el contenedor totalmente*/
+    background-size: cover;
+    /*define posicion inicial de imagen*/
+    background-position: right;
+    /*contenedor flexbox*/
+    display: flex;
+    /*como distribuye espacio dentro de la flex box*/
+    justify-content: space-between;
+    /*alineacion dentro del bloque*/
+    align-items: center;
+}
+
+.banner h2
+{
+    /*ajusta tamaño de acuerdo al dispositivo*/
+    font-size: 3em;
+    color: #fff;
+    /*que tan bold es*/
+    font-weight: 500;
+    /* distancia vertical entre lineas de texto*/
+    line-height: 1.5em;
+}
+
+.banner h2 span
+{
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.banner h3
+{
+    /*ajusta tamaño de acuerdo al dispositivo*/
+    font-size: 1.5em;
+    color: #fff;
+    /*que tan bold es*/
+    font-weight: 500;
+}
+
+.btn
+{
+    position: relative;
+    /*color del fondo del boton*/
+    background: #2196f3;
+    /*permite setear alto ancho, margin y padding, el inline solo no*/
+    display: inline-block;
+    /*color letra del btn*/
+    color: #fff;
+    /*que tanto se separa del bloque de arriba*/
+    margin-top: 20px;
+    /*padding hacia arriba/abajo costados*/
+    padding: 10px 30px;
+    font-size:18px;
+    text-transform: uppercase;
+    /*le saca el subrayado de link*/
+    text-decoration: none;
+    /*espaciado entre letras*/
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+header
+{
+    /*mantiene el header siempre en el top*/ 
+    position: fixed;
+    /*distancia entre borde sup del elemento y borde sup del bloque que lo contiene*/
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 40px 100px;
+    /*indica el orden de los elementos, ante una superposicion, el mayor z index cubre al resto*/
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /*cambiar valore de propiedades (sticky) de manera mas suave*/
+    transition: 0.5s;
+}
+
+header.sticky
+/*clase sticky agregada al header mediante toogle lo modifica asi:*/
+{
+    background: #fff;
+    padding: 20px 100px;
+    /*sombra de box offset x offset y blurRadius color*/
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+header .logo
+/*Portfolio*/
+{
+color: #fff;
+font-size: 24px;
+text-transform: uppercase;
+text-decoration: none;
+font-weight: 700;
+letter-spacing: 2px;
+
+}
+header.sticky .logo
+/*cambia el color del logo al scrollear(lo detecta con sticky) para que se diferencie del fondo de la box*/
+{
+    color: #111;
+}
+
+header ul
+{
+    position: relative;
+    display: flex;
+}
+
+header ul li
+{
+    position: relative;
+    list-style: none;
+}
+
+header ul li a
+{
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+header.sticky ul li a
+/* cambia el color de los items del menu para mejor contraste con fondo*/
+{
+    color: #111;
+}
+/**************ABOUT***************/
+.heading
+/*Modifica al titulo About ME */
+{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+.heading h2
+/*titulo about me*/
+{
+    font-weight: 600;
+    font-size: 30px;
+}
+.content
+/*texto e imagen en una sola flex box, se ponen en paralelo*/
+{
+    display:flex;
+    /* Distribuir items uniformemente el primer item al inicio, el último al final */
+
+    justify-content: space-between;
+}
+
+.contentBx
+/*separa 30px texto e imagen*/
+{
+    padding-right: 30px;
+}
+
+.contentBx h3
+/*aplica al texto largo del about me y subtitulo*/
+{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.w50
+/*texto e imagen*/
+{
+    min-width: 50%;
+
+}
+
+img
+{
+    max-width: 100%;
+}
+
+/*************Servicios***************/
+
+.services
+{
+    background: #111;
+
+}
+/*white como atributo de heading*/
+.heading.white
+{
+    color: #fff;
+}
+
+.services .content
+{
+    display: flex;
+    justify-content: center;
+    /*se alinean en multiples lineas en caso de overflow*/
+    flex-wrap: wrap;
+    /*flex direction en fila*/
+    flex-direction: row;
+}
+
+.services .content .servicesBx
+{
+    padding: 40px 20px;
+    background: #222;
+    color: #fff;
+    max-width: 340px;
+    margin: 20px;
+    /*que tan rapido se alinean en la pagina*/
+    transition: 0.5s;
+    text-align: center;
+}
+.services .content .servicesBx:hover
+{
+    background: #2196f3;
+}
+
+.services .content .servicesBx img
+{
+    max-width: 80px;
+    /*invierte colores de la imagen entre 0 y 1(0 a 100%)*/
+    filter: invert(1);
+}
+.services .content .servicesBx h2
+{
+    font-size: 20px;
+    font-weight: 600;
+}
